@@ -1,0 +1,51 @@
+<form #f="ngForm" (ngSubmit)="add()">
+    <div class="form-group">
+    <label class="form-label">ID</label>
+    <input type="number" class="form-control" name="id" [(ngModel)]="film.id" #id="ngModel" required minlength="1">
+    <div class="alert alert-danger" *ngIf="id.invalid && id.touched">
+        <div *ngIf="id.errors?.['required']">ID is required!</div>
+    </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="film.title" #title="ngModel" required minlength="1" >
+      <div class="alert alert-danger" *ngIf="title.invalid && title.touched">
+          <div *ngIf="title.errors?.['required']">Title is required!</div>
+      </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" name="description" [(ngModel)]="film.description" #description="ngModel" minlength="10">
+        <div class="alert alert-danger" *ngIf="description.invalid && description.touched">
+            <div *ngIf="description.errors?.['minlength']">Description must be 10 caracters or more!</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Views</label>
+          <input type="number" class="form-control" name="views" [(ngModel)]="film.views" #views="ngModel"  min="0">
+          <div class="alert alert-danger" *ngIf="views.invalid && views.touched">
+              <div *ngIf="views.errors?.['min']">Views must be positive!</div>
+          </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Category:</label>
+         <select class="form-control" name="category" [(ngModel)]="film.category" #category="ngModel" >
+            <option value="action">action</option>
+            <option value="documentaire">documentaire</option>
+            <option value="comedie">comedie</option>
+        </select>
+      
+  </div>
+  
+    <div class="form-group">
+        <label class="form-label">Public:</label>
+         <select class="form-control" name="public" [(ngModel)]="film.public" #public="ngModel">
+            <option value=true>true</option>
+            <option value=false>false</option>
+        </select>
+        
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Ajouter" [disabled]="f.invalid" >
+    </div>
+</form>

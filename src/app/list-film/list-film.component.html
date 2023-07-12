@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div  class="col-md-4" *ngFor="let f of listFilm">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body" >
+                  <h5 class="card-title" >ID: {{f.id}}</h5>
+                  <p class="card-text">Title: {{f.title}}</p>
+                  <p class="card-text">Description: {{f.description}}</p>
+                  <p class="card-text">Views: {{f.views}}</p>
+                  <p class="card-text">Category: {{f.category}}</p>
+                  <p class="card-text">Public: {{f.public}}</p>
+                  <button class="btn btn-success" (click)="details(f)" routerLink="/detail">Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
