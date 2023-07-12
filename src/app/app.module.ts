@@ -6,22 +6,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AddFilmComponent } from './add-film/add-film.component';
-import { ListFilmComponent } from './list-film/list-film.component';
 import { DetailsfilmComponent } from './detailsfilm/detailsfilm.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ListcampsitesComponent } from './listcampsites/listcampsites.component';
+import { ListactivitiesComponent } from './listactivities/listactivities.component';
+import { AddcampsiteComponent } from './addcampsite/addcampsite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     NotFoundComponent,
-    AddFilmComponent,
-    ListFilmComponent,
     DetailsfilmComponent,
     FooterComponent,
-    HomepageComponent
+    HomepageComponent,
+    ListcampsitesComponent,
+    ListactivitiesComponent,
+    AddcampsiteComponent
   ],
   imports: [
     BrowserModule,
