@@ -12,6 +12,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ListcampsitesComponent } from './listcampsites/listcampsites.component';
 import { ListactivitiesComponent } from './listactivities/listactivities.component';
 import { AddcampsiteComponent } from './addcampsite/addcampsite.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AddcampsiteComponent } from './addcampsite/addcampsite.component';
     HomepageComponent,
     ListcampsitesComponent,
     ListactivitiesComponent,
-    AddcampsiteComponent
+    AddcampsiteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

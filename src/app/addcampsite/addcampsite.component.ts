@@ -8,17 +8,17 @@ import { campsite } from 'src/model/campsite';
   templateUrl: './addcampsite.component.html',
   styleUrls: ['./addcampsite.component.css']
 })
-export class AddcampsiteComponent implements OnInit{
-  campsite : campsite=new campsite();
-  
-  constructor(private CampsiteService : CampsiteService,private router:Router){}
-  
+export class AddcampsiteComponent implements OnInit {
+  campsite: campsite = new campsite();
+
+  constructor(private CampsiteService: CampsiteService, private router: Router) { }
+
   ngOnInit(): void {
   }
 
-  add(){    
+  add() {
     this.CampsiteService.postcampSite(this.campsite).subscribe(
-      ()=> this.router.navigate(["/listcampsites"])
+      () => this.router.navigate(["/listcampsites"])
     );
     ;
   }

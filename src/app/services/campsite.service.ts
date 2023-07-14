@@ -15,19 +15,19 @@ export class CampsiteService {
     return this.http.get<campsite[]>(this.url);
   }
 
-  postcampSite(s: campsite){
-    return this.http.post<campsite>(this.url+"/ajoutercampsite/",s);
+  postcampSite(s: campsite){    
+    return this.http.post<campsite>((`${this.url}/ajoutercampSite`),s);
   }
 
   deletecampSite(s: campsite){
-    return this.http.delete(this.url+"/"+s.id_campSite);
+    return this.http.delete(`${this.url}/${s.id_campSite}`);
   }
 
   updatecampSite(s: campsite) {
-    return this.http.put<campsite>(this.url+"/"+s.id_campSite, campsite);
+    return this.http.put<campsite>((`${this.url}/${s.id_campSite}`), campsite);
   }
 
   getcampSiteById(campsiteId: number) {
-    return this.http.get<campsite>(this.url+"fetch/"+campsiteId);
+    return this.http.get<campsite>((`${this.url}/fetch/${campsiteId}`));
   }
 }

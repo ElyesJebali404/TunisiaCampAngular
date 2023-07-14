@@ -5,6 +5,8 @@ import { DetailsfilmComponent } from './detailsfilm/detailsfilm.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ListcampsitesComponent } from './listcampsites/listcampsites.component';
 import { AddcampsiteComponent } from './addcampsite/addcampsite.component';
+import { ListactivitiesComponent } from './listactivities/listactivities.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path:'listcampsites',component:ListcampsitesComponent},
   {path:'addcampsite',component:AddcampsiteComponent},
   {path:'detail',component:DetailsfilmComponent},
+  {path:'listactivities',component:ListactivitiesComponent},
+  {path:'login',component:LoginComponent},
   {path:'**',component:NotFoundComponent}
 ];
 

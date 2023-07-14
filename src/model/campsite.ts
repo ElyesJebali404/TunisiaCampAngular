@@ -3,4 +3,5 @@ export class campsite{
     name! : string;
     location! : string;
     nbrPlace! : number;
+    image! : string;
 }

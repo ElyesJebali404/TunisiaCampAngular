@@ -1,0 +1,60 @@
+<section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark"
+    style="min-height: 100vh; background-size: cover; background-image: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1920&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=c0d43804e2c7c93143fe8ff65398c8e9);">
+    <div class="container-fluid">
+        <div class="row  justify-content-center align-items-center d-flex-row text-center h-100">
+            <div class="col-12 col-md-4 col-lg-3   h-50 ">
+                <div class="card shadow">
+                    <div class="card-body mx-auto">
+                        <h4 class="card-title mt-3 text-center">Add new camping Site</h4>
+                        <p class="text-center">Fill informations below to add a new camping site</p>
+                        <form #f="ngForm" (ngSubmit)="add()">
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-map"></i> </span>
+                                </div>
+                                <input name="campsite.name" class="form-control" placeholder="Name" type="text" name="name" [(ngModel)]="campsite.name" #name="ngModel" required>
+                                
+                            </div>
+                            <div class="alert alert-danger" *ngIf="name.invalid && name.touched">
+                                <div *ngIf="name.errors?.['required']">name is required!</div>
+                            </div>
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-crosshairs"></i> </span>
+                                </div>
+                                <input name="campsite.location" class="form-control" placeholder="Location" type="text" name="location" [(ngModel)]="campsite.location" #location="ngModel" required>
+                            </div>
+                            <div class="alert alert-danger" *ngIf="location.invalid && location.touched">
+                                <div *ngIf="location.errors?.['required']">location is required!</div>
+                            </div>
+
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-users"></i> </span>
+                                </div>
+                                <input class="form-control" placeholder="Number of free places" type="number" name="campsite.nbrPlace" name="nbrPlace" [(ngModel)]="campsite.nbrPlace" #nbrPlace="ngModel" required min="0">
+                            </div>
+                            <div class="alert alert-danger" *ngIf="nbrPlace.invalid && nbrPlace.touched">
+                                <div *ngIf="nbrPlace.errors?.['required']">nbrPlace is required!</div>
+                                <div *ngIf="nbrPlace.errors?.['min']">nbrPlace must be positive!</div>
+                            </div>
+                            
+
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-file-image"></i> </span>
+                                </div>
+                                <input class="form-control" type="file" id="formFile" accept=".jpg,.jpeg,.png"  name="campsite.image" name="image" [(ngModel)]="campsite.image" #image="ngModel">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Create Camping Site </button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
