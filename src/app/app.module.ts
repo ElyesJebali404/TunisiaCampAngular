@@ -13,6 +13,8 @@ import { ListcampsitesComponent } from './listcampsites/listcampsites.component'
 import { ListactivitiesComponent } from './listactivities/listactivities.component';
 import { AddcampsiteComponent } from './addcampsite/addcampsite.component';
 import { LoginComponent } from './login/login.component';
+import { DetailcampsiteComponent } from './detailcampsite/detailcampsite.component';
+import { CrudcampsiteComponent } from './crudcampsite/crudcampsite.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LoginComponent } from './login/login.component';
     ListcampsitesComponent,
     ListactivitiesComponent,
     AddcampsiteComponent,
-    LoginComponent
+    LoginComponent,
+    DetailcampsiteComponent,
+    CrudcampsiteComponent
   ],
   imports: [
     BrowserModule,

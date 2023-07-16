@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CampsiteService } from './../services/campsite.service';
 import { Component, OnInit } from '@angular/core';
 import { campsite } from 'src/model/campsite';
@@ -11,14 +12,16 @@ export class ListcampsitesComponent implements OnInit{
 
   listCampSites! : campsite[];
 
-  constructor(private CampsiteService : CampsiteService){}
+  constructor(private CampsiteService : CampsiteService,private Router:Router){}
 
 ngOnInit(): void {
-
   this.CampsiteService.getcampSite().subscribe(
     ( data:campsite[] ) => this.listCampSites=data)
-    console.log(this.listCampSites);
-    
+}
+
+detail(id:number){
+  this.CampsiteService.id=id;
+  this.Router.navigate(['/detail/'+id]);
 }
 
 }

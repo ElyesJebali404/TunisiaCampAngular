@@ -1,1 +1,87 @@
-<h1>login here </h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter un Campsite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        input[type="text"], input[type="number"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ajouter un Campsite</h2>
+    <form id="campsiteForm">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="location">Emplacement :</label>
+        <input type="text" id="location" name="location" required>
+        
+        <label for="nbrPlace">Nombre de places :</label>
+        <input type="number" id="nbrPlace" name="nbrPlace" required>
+
+        <label for="image">Image :</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        
+        <input type="submit" value="Ajouter" onclick="submitCampsite(event)">
+    </form>
+
+    <script>
+        function submitCampsite(event) {
+            event.preventDefault(); // Empêcher le comportement par défaut du formulaire
+
+            const name = document.getElementById("name").value;
+            const location = document.getElementById("location").value;
+            const nbrPlace = document.getElementById("nbrPlace").value;
+            const image = document.getElementById("image").files[0];
+
+            const campsite = new FormData();
+            campsite.append('name', name);
+            campsite.append('location', location);
+            campsite.append('nbrPlace', nbrPlace);
+            campsite.append('image', image);
+
+            fetch('/api/campsites', {
+                method: 'POST',
+                body: campsite
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Campsite ajouté avec succès !");
+                    document.getElementById("campsiteForm").reset(); // Réinitialiser le formulaire
+                } else {
+                    alert("Une erreur s'est produite lors de l'ajout du campsite.");
+                }
+            })
+            .catch(error => {
+                console.error('Erreur :', error);
+                alert("Une erreur s'est produite lors de l'ajout du campsite.");
+            });
+        }
+    </script>
+</body>
+</html>

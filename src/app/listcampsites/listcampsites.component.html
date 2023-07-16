@@ -15,7 +15,7 @@
 					<li class="tag__item"><i class="fa fa-map" ></i> {{p.location}}</li>
 					<li class="tag__item"><i class="fa fa-users"></i> {{p.nbrPlace}} personnes</li>
 					<li class="tag__item play blue">
-						<a href="#">
+						<a (click)="detail(p.id_campSite)">
                             <i class="fas fa-play mr-2"> Click here for more details</i>
                         </a>
 					</li>

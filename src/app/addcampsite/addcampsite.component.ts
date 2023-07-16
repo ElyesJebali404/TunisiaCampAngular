@@ -17,8 +17,18 @@ export class AddcampsiteComponent implements OnInit {
   }
 
   add() {
+    console.log(this.campsite.image)
     this.CampsiteService.postcampSite(this.campsite).subscribe(
-      () => this.router.navigate(["/listcampsites"])
+      {
+        next:(val:any) =>{
+          alert('Employee added successfully');
+          this.router.navigate(["/listcampsites"]);
+
+        },
+        error:(err:any) =>{
+          console.error(err);
+        }
+      }
     );
     ;
   }
