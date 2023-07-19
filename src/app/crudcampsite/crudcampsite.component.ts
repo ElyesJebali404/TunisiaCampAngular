@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { campsite } from 'src/model/campsite';
 import { CampsiteService } from '../services/campsite.service';
 import { Router } from '@angular/router';
+import { bootstrapApplication } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-crudcampsite',
@@ -77,5 +78,8 @@ export class CrudcampsiteComponent implements OnInit {
   adding(){
     this.router.navigate(['/addcampsite']);
   }
+
+  
+  
 
 }
