@@ -17,6 +17,7 @@ import { DetailcampsiteComponent } from './detailcampsite/detailcampsite.compone
 import { CrudcampsiteComponent } from './crudcampsite/crudcampsite.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { BookingComponent } from './booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AddcampsiteComponent,
     LoginComponent,
     DetailcampsiteComponent,
-    CrudcampsiteComponent
+    CrudcampsiteComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,

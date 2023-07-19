@@ -9,6 +9,7 @@ import { ListactivitiesComponent } from './listactivities/listactivities.compone
 import { LoginComponent } from './login/login.component';
 import { DetailcampsiteComponent } from './detailcampsite/detailcampsite.component';
 import { CrudcampsiteComponent } from './crudcampsite/crudcampsite.component';
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'listactivities',component:ListactivitiesComponent},
   {path:'login',component:LoginComponent},
   {path:'crudcampsite',component:CrudcampsiteComponent},
+  {path:'booking',component:BookingComponent},
   {path:'**',component:DetailsfilmComponent}
 ];
 
