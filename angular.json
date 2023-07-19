@@ -31,8 +31,7 @@
             ],
             "scripts": [
               "src/assets/jquery.js",
-              "src/assets/nicepage.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "src/assets/nicepage.js"
             ]
           },
           "configurations": {

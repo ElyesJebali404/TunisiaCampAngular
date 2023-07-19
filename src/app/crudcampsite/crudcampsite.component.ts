@@ -46,13 +46,14 @@ export class CrudcampsiteComponent implements OnInit {
   }
 
   update(id: number) {
+    
     this.CampsiteService.getcampSiteById(id).subscribe(
       (data: campsite) => {
         this.campsite = data;
         console.log('Données du campsite :', this.campsite);
       },
       error => {
-        console.error('Erreur lors de la récupération des données du campsite :', error);
+        console.error('Erreur lors de la récupération des données du campsite : ', error);
       }
     );
   }
@@ -73,6 +74,7 @@ export class CrudcampsiteComponent implements OnInit {
         }
       );
     }
+
   }
   
   adding(){
