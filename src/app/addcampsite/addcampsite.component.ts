@@ -1,7 +1,8 @@
 import { CampsiteService } from './../services/campsite.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { campsite } from 'src/model/campsite';
+
 
 @Component({
   selector: 'app-addcampsite',
@@ -14,22 +15,24 @@ export class AddcampsiteComponent implements OnInit {
   constructor(private CampsiteService: CampsiteService, private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   add() {
     console.log(this.campsite.image)
     this.CampsiteService.postcampSite(this.campsite).subscribe(
       {
-        next:(val:any) =>{
+        next: (val: any) => {
           alert('Employee added successfully');
-          this.router.navigate(["/listcampsites"]);
+          this.router.navigate(["/crudcampsite"]);
 
         },
-        error:(err:any) =>{
+        error: (err: any) => {
           console.error(err);
         }
       }
     );
     ;
   }
+
 }

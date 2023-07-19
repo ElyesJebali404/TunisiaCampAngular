@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'listactivities',component:ListactivitiesComponent},
   {path:'login',component:LoginComponent},
   {path:'crudcampsite',component:CrudcampsiteComponent},
-  {path:'**',component:NotFoundComponent}
+  {path:'**',component:DetailsfilmComponent}
 ];
 
 @NgModule({

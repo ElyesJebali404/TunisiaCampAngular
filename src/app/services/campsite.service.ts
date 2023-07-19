@@ -26,7 +26,7 @@ export class CampsiteService {
   }
 
   updatecampSite(s: campsite) {
-    return this.http.put<campsite>((`${this.url}/${s.id_campSite}`), campsite);
+    return this.http.put<campsite>((`${this.url}/${s.id_campSite}`), s);
   }
 
   getcampSiteById(campsiteId: number):Observable<campsite> {

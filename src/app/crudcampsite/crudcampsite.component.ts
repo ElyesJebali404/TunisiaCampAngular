@@ -12,6 +12,9 @@ export class CrudcampsiteComponent implements OnInit {
 
   listCampSites!: campsite[];
 
+  campsite: campsite = new campsite();
+
+
   constructor(private CampsiteService: CampsiteService, private router: Router) { }
 
   ngOnInit(): void {
@@ -25,7 +28,7 @@ export class CrudcampsiteComponent implements OnInit {
   }
 
   delete(campsite: campsite) {
-    if (confirm('Are you sure to delete ' + campsite.name + ' ?')) {
+    if (confirm('Are you sure you want to delete ' + campsite.name + ' ?')) {
       this.CampsiteService.deletecampSite(campsite).subscribe({
         next: (val: any) => {
           alert('Campsite deleted successfully');
@@ -39,6 +42,40 @@ export class CrudcampsiteComponent implements OnInit {
       }
       );
     }
+  }
+
+  update(id: number) {
+    this.CampsiteService.getcampSiteById(id).subscribe(
+      (data: campsite) => {
+        this.campsite = data;
+        console.log('Données du campsite :', this.campsite);
+      },
+      error => {
+        console.error('Erreur lors de la récupération des données du campsite :', error);
+      }
+    );
+  }
+
+
+
+  updating(campsite: campsite) {
+    if (confirm('Are you sure you want to update ' + campsite.name + ' ?')) {
+      this.CampsiteService.updatecampSite(campsite).subscribe(
+        (campsite: campsite) => {
+          alert('Campsite updated successfully');
+          this.CampsiteService.getcampSite().subscribe(
+            (data: campsite[]) => this.listCampSites = data)
+        },
+        error => {
+          console.error('Erreur lors de la mise à jour du campsite :', error);
+
+        }
+      );
+    }
+  }
+  
+  adding(){
+    this.router.navigate(['/addcampsite']);
   }
 
 }

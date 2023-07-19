@@ -15,6 +15,8 @@ import { AddcampsiteComponent } from './addcampsite/addcampsite.component';
 import { LoginComponent } from './login/login.component';
 import { DetailcampsiteComponent } from './detailcampsite/detailcampsite.component';
 import { CrudcampsiteComponent } from './crudcampsite/crudcampsite.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CrudcampsiteComponent } from './crudcampsite/crudcampsite.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

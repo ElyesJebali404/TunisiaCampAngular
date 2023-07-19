@@ -12,8 +12,9 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"> <i class="fa fa-map"></i> </span>
                                 </div>
-                                <input name="campsite.name" class="form-control" placeholder="Name" type="text" name="name" [(ngModel)]="campsite.name" #name="ngModel" required>
-                                
+                                <input name="campsite.name" class="form-control" placeholder="Name" type="text"
+                                    name="name" [(ngModel)]="campsite.name" #name="ngModel" required>
+
                             </div>
                             <div class="alert alert-danger" *ngIf="name.invalid && name.touched">
                                 <div *ngIf="name.errors?.['required']">name is required!</div>
@@ -22,7 +23,8 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"> <i class="fa fa-crosshairs"></i> </span>
                                 </div>
-                                <input name="campsite.location" class="form-control" placeholder="Location" type="text" name="location" [(ngModel)]="campsite.location" #location="ngModel" required>
+                                <input name="campsite.location" class="form-control" placeholder="Location" type="text"
+                                    name="location" [(ngModel)]="campsite.location" #location="ngModel" required>
                             </div>
                             <div class="alert alert-danger" *ngIf="location.invalid && location.touched">
                                 <div *ngIf="location.errors?.['required']">location is required!</div>
@@ -32,19 +34,22 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"> <i class="fa fa-users"></i> </span>
                                 </div>
-                                <input class="form-control" placeholder="Number of free places" type="number" name="campsite.nbrPlace" name="nbrPlace" [(ngModel)]="campsite.nbrPlace" #nbrPlace="ngModel" required min="0">
+                                <input class="form-control" placeholder="Number of free places" type="number"
+                                    name="campsite.nbrPlace" name="nbrPlace" [(ngModel)]="campsite.nbrPlace"
+                                    #nbrPlace="ngModel" required min="0">
                             </div>
                             <div class="alert alert-danger" *ngIf="nbrPlace.invalid && nbrPlace.touched">
                                 <div *ngIf="nbrPlace.errors?.['required']">nbrPlace is required!</div>
                                 <div *ngIf="nbrPlace.errors?.['min']">nbrPlace must be positive!</div>
                             </div>
-                            
+
 
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"> <i class="fa fa-file-image"></i> </span>
                                 </div>
-                                <input class="form-control" type="file" id="formFile" accept=".jpg,.jpeg,.png"  name="campsite.image" name="image" [(ngModel)]="campsite.image" #image="ngModel">
+                                <input class="form-control" type="file" id="formFile" accept=".jpg,.jpeg,.png"
+                                    name="campsite.image" name="image" [(ngModel)]="campsite.image" #image="ngModel">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-block"> Create Camping Site </button>
