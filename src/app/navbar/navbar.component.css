@@ -1,0 +1,13 @@
+.sticky-top {
+    margin-bottom: 0 ;
+}
+.navbar {
+    border-radius: 0 ;
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px !important;
+    line-height: 20px !important;
+}
