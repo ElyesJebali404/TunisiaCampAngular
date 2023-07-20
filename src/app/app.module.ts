@@ -18,9 +18,11 @@ import { CrudcampsiteComponent } from './crudcampsite/crudcampsite.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BookingComponent } from './booking/booking.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
     NavbarComponent,
     NotFoundComponent,
@@ -33,8 +35,10 @@ import { BookingComponent } from './booking/booking.component';
     LoginComponent,
     DetailcampsiteComponent,
     CrudcampsiteComponent,
-    BookingComponent
-  ],
+    BookingComponent,
+    ProductCardComponent,
+      ShoppingCartComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
