@@ -34,8 +34,8 @@
 											<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
 										</span>
 									</a>
-									<a data-bs-target="#staticBackdrop" data-bs-toggle="modal" (click)="update(p.id_campSite)"
-										class="table-link">
+									<a data-bs-target="#staticBackdrop" data-bs-toggle="modal"
+										(click)="openModal(p.id_campSite)" class="table-link">
 										<span class="fa-stack">
 											<i class="fa fa-square fa-stack-2x"></i>
 											<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
@@ -50,7 +50,7 @@
 
 								</td>
 							</tr>
-						</tbody>				
+						</tbody>
 					</table>
 				</div>
 			</div>
@@ -59,24 +59,24 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 text-right">
-            <button type="button" class="btn btn-primary" (click)="adding()">Add a new campsite</button>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-md-12 text-right">
+			<button type="button" class="btn btn-primary" (click)="adding()">Add a new campsite</button>
+		</div>
+	</div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-	aria-labelledby="staticBackdropLabel" aria-hidden="true" >
-	<div class="modal-dialog">
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-title" id="staticBackdropLabel">Update Campsite</h2>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				<h4 class="modal-title">Model Title</h4>
+				<button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+						aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">
-				<form #f="ngForm" >
+				<form #f="ngForm">
 					<div class="form-group input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"> <i class="fa fa-map-marker"></i> </span>
@@ -125,12 +125,13 @@
 							Update Camping Site
 						</button>
 						<button type="button" class="btn btn-light  btn-block" data-bs-dismiss="modal"
-							aria-label="Close">Cancel</button>
+							aria-label="Close" (click)="onCloseHandled()">Cancel</button>
 					</div>
 
 
 				</form>
 			</div>
+			
 		</div>
 	</div>
 </div>

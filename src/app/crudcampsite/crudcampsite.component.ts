@@ -58,13 +58,11 @@ export class CrudcampsiteComponent implements OnInit {
     );
   }
 
-
-
   updating(campsite: campsite) {
     if (confirm('Are you sure you want to update ' + campsite.name + ' ?')) {
       this.CampsiteService.updatecampSite(campsite).subscribe(
         (campsite: campsite) => {
-          alert('Campsite updated successfully');
+          alert('Campsite updated successfully !');
           this.CampsiteService.getcampSite().subscribe(
             (data: campsite[]) => this.listCampSites = data)
         },
@@ -73,6 +71,7 @@ export class CrudcampsiteComponent implements OnInit {
 
         }
       );
+      this.onCloseHandled();
     }
 
   }
@@ -80,8 +79,13 @@ export class CrudcampsiteComponent implements OnInit {
   adding(){
     this.router.navigate(['/addcampsite']);
   }
-
-  
-  
+  display = "none";
+  openModal(id:number) {
+    this.display = "block";
+    this.update(id);
+  }
+  onCloseHandled() {
+    this.display = "none";
+  }
 
 }

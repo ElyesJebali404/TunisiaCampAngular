@@ -1,0 +1,57 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="background-image" >
+<div class="card" style="padding: 5%; width: 55rem; margin-left: 15%; margin-top: 5%;">
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-uppercase mb-0">Liste des utilisateurs</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table no-wrap user-table mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-0 text-uppercase font-medium pl-4">#</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Utilisateur</th>
+                      
+                      <th scope="col" class="border-0 text-uppercase font-medium">Email</th>
+                     
+                      <th scope="col" class="border-0 text-uppercase font-medium">Manage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let utilisateur of utilisateurs">
+                      <td class="pl-4">{{ utilisateur.id }}</td>
+                      <td>
+                          <h5 class="font-medium mb-0">{{ utilisateur.username }}</h5>
+                          
+                      </td>
+                      
+                      <td>
+                          <span class="text-muted">{{ utilisateur.email }}</span><br>
+                          
+                      </td>
+                      
+                      <td>
+                        <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle"><i class="fa fa-key"></i> </button>
+                        <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" (click)="deleteUser(utilisateur.id )"><i class="fa fa-trash"></i> </button>
+                        <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-edit"></i> </button>
+                        <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-upload"></i> </button>
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+            </div>
+            <div>
+            <button type="button" class="btn btn-primary" routerLink="/user/add" style="margin-left: 45%;  margin-top:7% ;">Ajouter</button>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<app-footer></app-footer>

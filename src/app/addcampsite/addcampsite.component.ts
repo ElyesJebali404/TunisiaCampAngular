@@ -23,7 +23,7 @@ export class AddcampsiteComponent implements OnInit {
     this.CampsiteService.postcampSite(this.campsite).subscribe(
       {
         next: (val: any) => {
-          alert('Employee added successfully');
+          alert('Campsite added successfully');
           this.router.navigate(["/crudcampsite"]);
 
         },

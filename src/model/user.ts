@@ -1,9 +1,10 @@
-export class user{
-    id! : number;
-    passowrd! : string;
-    username! : string;
-    email! : string;
-    f_name! : string;
-    l_name! : string;
+export class User {
+    id!: number;
+    fName!: string;
+    lName!: string;
+    username!: string;
+    password!: string;
     tel!: number;
-}
+    email!: string;
+  }
+  
